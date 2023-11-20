@@ -32,6 +32,6 @@ function showImg(n) {
   Images[imgIndex-1].style.display = "block";  
  
 }
-window.setInterval(function(){
+window.setInterval(function () {
   nextImg(1);
-},2000);
+}, 2000);
