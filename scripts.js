@@ -1,4 +1,5 @@
 let imgIndex = 1;
+let interval;
 showImg(imgIndex);
 
 function nextImg(n)
@@ -12,6 +13,7 @@ function prevImg(n)
 }
 function showImg(n) 
 {
+  clearInterval(interval);
   let i;
   let Images = document.getElementsByClassName("myImages");
   if (n > Images.length) 
@@ -32,8 +34,10 @@ function showImg(n)
     Images[i].style.display = "none";  
   }
   Images[imgIndex - 1].classList.add("fade");
-  Images[imgIndex-1].style.display = "block";  
+  Images[imgIndex-1].style.display = "block"; 
+
+  interval = setInterval(function () {
+    nextImg(1);
+  }, 4000);
  }
-window.setInterval(function () {
-  nextImg(1);
-}, 2000);
+
